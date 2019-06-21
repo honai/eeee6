@@ -8,7 +8,7 @@
 
 void bright() {
     if (ADGO == 0) {
-        if (ADRESH > 0x80) {
+        if (ADRESH > 0x90) {
             CCPR1L = 0;
         } else {
             CCPR1L = 0xFF - ADRESH;
@@ -39,6 +39,7 @@ void main() {
 
     CCPR1L = 255;
 
+    // AD変換前の待ち時間
     while(TMR0IF == 0) {}
     TMR0IF = 0;
 
